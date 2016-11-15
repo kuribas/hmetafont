@@ -58,9 +58,7 @@ beginchar("c", 12u#, x_height#, dp#);
   top y4l = x_height + o;
 
   z2mid = 0.78[(x2r,y3r), (x3r,y2r)];
-  x1mid = x2r + (x2r - x2mid);
-  y1mid = y2mid; 
-
+  
   lft x5l = 0.2[w - curve, x4r];
   bot y6 = 0.66h;
   z6 = z5 + whatever*dir (flareangle - 85);
@@ -95,7 +93,7 @@ lowerC = glyph "c" (return w) &
      pos 4 vair (-90)
      pos 5 flare flareangle
 
-     w = 12*u
+     w === 12*u
      top y1r === 0.35*x_height
      rt x1l === x5r + 0.04*w
 
@@ -103,7 +101,7 @@ lowerC = glyph "c" (return w) &
      bot y2l === -o
      top y2r === bot y2l + between 0.5 hair stem
 
-     left x3l === 0
+     lft x3l === 0
      y3 === x_height/2
 
      x4 === x2l
@@ -111,9 +109,7 @@ lowerC = glyph "c" (return w) &
      top y4l === x_height + o
 
      z"2mid" === between 0.78 (x2r, y3r) (x3r, y2r)
-     x"1mid" === x2r + (x2r - x"2mid")
-     y"1mid" == y"2mid"
-
+     
      lft x5l === between 0.2 (w - curve) x4r
      bot y6 === 0.66*h
      z6 === z5 + whatever*dir (flareangle - 85)
