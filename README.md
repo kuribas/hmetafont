@@ -73,11 +73,15 @@ lowerC = glyph "c" (12*u) &
 	 penlabels [1, 2, 3, 4, 5, 6]
 
      filldraw $ z1l .- leaving (dir (-100)) <> tensions 0.75 0.78 -.
-       z2l .- leaving left <> tension 0.88 -. z3l .- leaving up <>
-       tension 0.88 .- z4l .- leaving right -. z5r .- leaving (dir (flareangle - 90))
-       <> tension 0.85 -. z6 .- leaving (dir(flareangle - 180)) -. tension 0.8 -.
-       z5l -. leaving (dir (flareangle + 90)) <> tension 0.85 -. z4r
-       .- leaving left <> tension 0.88 -. z3r -. leaving down -. z "2mid"
-       -. leaving (z2r-z3r) -. z2r .- leaving right -. tensions 0.9 0.75 <>
-       arriving (dir 80) -. z1r .--. cyclePath
+       z2l .- leaving left <> tension 0.88 -.
+	   z3l .- leaving up <> tension 0.88 -.
+	   z4l .- leaving right -.
+	   z5r .- leaving (dir (flareangle - 90)) <> tension 0.85 -.
+	   z6 .- leaving (dir(flareangle - 180)) <> tension 0.8 -.
+       z5l .- leaving (dir (flareangle + 90)) <> tension 0.85 -.
+	   z4r .- leaving left <> tension 0.88 -.
+	   z3r -. leaving down -.
+	   z"2mid" .- leaving (z2r-z3r) -.
+	   z2r .- leaving right <> tensions 0.9 0.75 <> arriving (dir 80) -.
+	   z1r .--. cyclePath
 ```
