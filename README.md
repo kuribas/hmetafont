@@ -5,7 +5,7 @@ fonts in haskell.  It's inspired by metafont, but adapted to modern
 technologies (Opentype).  It's written as a library for haskell, with
 a syntax that closely resembles metafont.  Some features are:
 
-   * generates standard compliant opentype fonts
+   * generates standard compliant unicode opentype fonts
    * simple and composite glyphs
    * specifying kerning pairs
    * specifying points in terms of parameters and equations
