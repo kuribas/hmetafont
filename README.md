@@ -78,7 +78,7 @@ In hmetafont this becomes:
 
 ```haskell
 lowerC :: Glyph ()
-lowerC = glyph "c" (12*u) &
+lowerC = glyph "c" (return w) &
   contours $=
   do pickup tinyNib
      pos 1 vair 158
@@ -86,6 +86,7 @@ lowerC = glyph "c" (12*u) &
      pos 4 vair (-90)
      pos 5 flare flareangle
 
+     w = 12*u
      top y1r === 0.35*x_height
      rt x1l === x5r + 0.04*w
 
@@ -106,8 +107,8 @@ lowerC = glyph "c" (12*u) &
 
      lft x5l === between 0.2 (w - curve) x4r
      bot y6 === 0.66*h
-	 w <- whatever
-     z6 === z5 + w*dir (flareangle - 85)
+	 we <- whatever
+     z6 === z5 + we*dir (flareangle - 85)
      y5 === between (2/3) y4 y6
 
 	 penlabels [1, 2, 3, 4, 5, 6]
