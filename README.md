@@ -14,8 +14,8 @@ a syntax that closely resembles metafont.  Some features are:
    * Calligraphic strokes with elliptic pens or pens from arbitrary
      (convex) paths.
    
-Most of the work right now has gone into the support libraries, which
-can be found here:
+It's work in progress.  Most of the work right now has gone into the
+support libraries, which can be found here:
 
    * [cubicbezier](https://github.com/kuribas/cubicbezier): bezier
    intersections, boolean path operations, hobby splines, curve
