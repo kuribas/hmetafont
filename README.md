@@ -34,7 +34,47 @@ These packages can also be found on hackage:
 
 ## Example Program:
 
-The following program describes a lowercase letter c after walbaum:
+For example take the lowercase letter c from a metafont [(walbaum)](https://github.com/kuribas/walbaum-metafont):
+
+```
+beginchar("c", 12u#, x_height#, dp#);
+  pickup tiny.nib;
+  pos1(vair, 158);
+  pos3(curve, 0);
+  pos4(vair, -90);
+  pos5(flare, flareangle);
+  
+  top y1r = 0.35x_height;
+  rt x1l = x5r + 0.04w;
+  
+  x2r = 0.5[rt x3r, lft x1r];
+  bot y2l = -o;
+  top y2r = bot y2l + 0.05 [hair, stem];
+
+  lft x3l = 0;
+  y3 = x_height/2;
+
+  x4 = x2l = w/2;
+  top y4l = x_height + o;
+
+  z2mid = 0.78[(x2r,y3r), (x3r,y2r)];
+  x1mid = x2r + (x2r - x2mid);
+  y1mid = y2mid; 
+
+  lft x5l = 0.2[w - curve, x4r];
+  bot y6 = 0.66h;
+  z6 = z5 + whatever*dir (flareangle - 85);
+  y5 = 2/3[y4, y6];
+
+  penlabels(1,2,3,4,5,6);
+
+  filldraw z1l{dir -100}..tension 0.75 and 0.78..z2l{left}..tension 0.88..z3l{up}..tension 0.88..
+  z4l{right}..tension 1 and 1..z5r{dir (flareangle - 90)}..tension 0.85.. z6{dir(flareangle - 180)}.. tension 0.8..z5l{dir (flareangle + 90)}..tension 0.85..
+  z4r{left}..tension 0.88..z3r{down}..z2mid{z2r-z3r}..z2r{right}..tension 0.9 and 0.75 ..{dir 80}z1r--cycle;
+endchar;
+```
+
+In hmetafont this becomes:
 
 ```haskell
 lowerC :: Glyph ()
