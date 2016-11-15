@@ -38,8 +38,7 @@ The following program describes a lowercase letter c after walbaum:
 
 ```haskell
 lowerC :: Glyph ()
-lowerC :: Glyph CmrParam
-lowerC = glyph "c" (12*u + serif_fit) &
+lowerC = glyph "c" (12*u) &
   contours $=
   do pickup tinyNib
      pos 1 vair 158
@@ -48,7 +47,7 @@ lowerC = glyph "c" (12*u + serif_fit) &
      pos 5 flare flareangle
 
      top y1r === 0.35*x_height
-     rt x1l === x5r + 0.04w
+     rt x1l === x5r + 0.04*w
 
      x2r === between 0.5 (rt x3r) (lft x1r)
      bot y2l === -o
@@ -61,14 +60,17 @@ lowerC = glyph "c" (12*u + serif_fit) &
      x2l === x/2
      top y4l === x_height + o
 
-     z "2mid" === between 0.78 (x2r, y3r) (x3r, y2r)
-     x "1mid" === x2r + (x2r - x "2mid")
-     y "1mid" == y "2mid"
+     z"2mid" === between 0.78 (x2r, y3r) (x3r, y2r)
+     x"1mid" === x2r + (x2r - x"2mid")
+     y"1mid" == y"2mid"
 
      lft x5l === between 0.2 (w - curve) x4r
      bot y6 === 0.66*h
-     z6 = z5 + whatever*dir (flareangle - 85)
+	 w <- whatever
+     z6 === z5 + w*dir (flareangle - 85)
      y5 === between (2/3) y4 y6
+
+	 penlabels [1, 2, 3, 4, 5, 6]
 
      filldraw $ z1l .- leaving (dir (-100)) <> tensions 0.75 0.78 -.
        z2l .- leaving left <> tension 0.88 -. z3l .- leaving up <>
