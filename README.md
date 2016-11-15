@@ -68,9 +68,18 @@ beginchar("c", 12u#, x_height#, dp#);
 
   penlabels(1,2,3,4,5,6);
 
-  filldraw z1l{dir -100}..tension 0.75 and 0.78..z2l{left}..tension 0.88..z3l{up}..tension 0.88..
-  z4l{right}..tension 1 and 1..z5r{dir (flareangle - 90)}..tension 0.85.. z6{dir(flareangle - 180)}.. tension 0.8..z5l{dir (flareangle + 90)}..tension 0.85..
-  z4r{left}..tension 0.88..z3r{down}..z2mid{z2r-z3r}..z2r{right}..tension 0.9 and 0.75 ..{dir 80}z1r--cycle;
+  filldraw z1l{dir -100}..tension 0.75 and 0.78..
+  z2l{left}..tension 0.88..
+  z3l{up}..tension 0.88..
+  z4l{right}..tension 1 and 1..
+  z5r{dir (flareangle - 90)}..tension 0.85..
+  z6{dir(flareangle - 180)}.. tension 0.8..
+  z5l{dir (flareangle + 90)}..tension 0.85..
+  z4r{left}..tension 0.88..
+  z3r{down}..
+  z2mid{z2r-z3r}..
+  z2r{right}..tension 0.9 and 0.75 ..{dir 80}
+  z1r--cycle;
 endchar;
 ```
 
@@ -107,8 +116,7 @@ lowerC = glyph "c" (return w) &
 
      lft x5l === between 0.2 (w - curve) x4r
      bot y6 === 0.66*h
-	 we <- whatever
-     z6 === z5 + we*dir (flareangle - 85)
+     z6 === z5 + whatever*dir (flareangle - 85)
      y5 === between (2/3) y4 y6
 
 	 penlabels [1, 2, 3, 4, 5, 6]
